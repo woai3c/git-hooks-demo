@@ -1,0 +1,25 @@
+{
+  "name": "git-hooks-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext .js src/",
+    "postinstall": "git config core.hooksPath hooks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woai3c/git-hooks-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woai3c/git-hooks-demo/issues"
+  },
+  "homepage": "https://github.com/woai3c/git-hooks-demo#readme",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1"
+  }
+}
