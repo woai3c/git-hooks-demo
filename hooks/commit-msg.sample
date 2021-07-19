@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# 用 `` 可以将命令的输出结果赋值给变量
+# 获取当前提交的 commit msg
+commit_msg=`cat $1`
+
+# 获取用户 email
+email=`git config user.email`
+msg_re="^(feat|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|release|workflow)(\(.+\))?: .{1,100}"
+
+if [[ ! $commit_msg =~ $msg_re ]]
+then
+	echo "不合法的 commit 消息提交格式，请使用正确的格式："
+	echo "feat: add comments"
+	echo "fix: handle events on blur (close #28)"
+	echo "详情请查看 git commit 提交规范：https://github.com/woai3c/Front-end-articles/blob/master/git%20commit%20style.md"
+
+	# 异常退出
+	exit 1
+fi
+
+# 为避免无法提交，这里可以修改为你自己的邮箱后缀
+email_re="@qq\.com"
+if [[ ! $email =~ $email_re ]]
+then
+	echo "此用户没有权限，具有权限的用户为： xxx@qq.com"
+
+	# 异常退出
+	exit 1
+fi

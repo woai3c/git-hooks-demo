@@ -1,7 +1,9 @@
-#!/bin/sh
-# 执行 lint 脚本，如果不正确需要将退出码设为非零
-npm run lint
+#!/usr/bin/env node
+const childProcess = require('child_process');
 
-# 获取上面脚本的退出码
-exitCode="$?"
-exit $exitCode
+try {
+  childProcess.execSync('npm run lint');
+} catch (error) {
+  console.log(error.stdout.toString());
+  process.exit(1);
+}
