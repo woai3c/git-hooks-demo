@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js src/",
-    "postinstall": "git config core.hooksPath hooks"
+    "postinstall": "git config core.hooksPath hooks && chmod 700 hooks/*"
   },
   "repository": {
     "type": "git",
