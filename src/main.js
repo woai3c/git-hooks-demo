@@ -3,3 +3,4 @@ function add() {
 }
 
 add();
+console.log(b);

@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-const childProcess = require('child_process');
-
-try {
-  childProcess.execSync('npm run lint');
-} catch (error) {
-  console.log(error.stdout.toString());
-  process.exit(1);
-}
